@@ -1,0 +1,90 @@
+/* Estilos Generales */
+body {
+    background-color: #1a1a1a;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Contenedor del Canvas */
+.canvas-container {
+    display: grid;
+    /* Usamos 10 columnas para poder dividir la base en 5 y 5 (50/50) */
+    grid-template-columns: repeat(10, 1fr); 
+    grid-template-rows: auto auto auto;
+    gap: 12px;
+    max-width: 1200px;
+    width: 100%;
+    background-color: #333;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Estilo de cada bloque */
+.block {
+    background: #ffffff;
+    border-top: 4px solid #e67e22; /* Color naranja Dexnote */
+    padding: 15px;
+    border-radius: 4px;
+    transition: transform 0.2s;
+}
+
+.block:hover {
+    transform: translateY(-3px);
+}
+
+.block h3 {
+    margin: 0 0 12px 0;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: #2c3e50;
+    border-bottom: 2px solid #f3f3f3;
+    padding-bottom: 5px;
+}
+
+.block p, .block li {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: #444;
+    margin-bottom: 6px;
+}
+
+.block ul {
+    padding-left: 18px;
+    margin: 0;
+}
+
+/* Definición de la cuadrícula superior */
+/* Cada columna principal del canvas ocupa 2 de nuestras 10 columnas */
+.key-partners { grid-column: span 2; grid-row: 1 / span 2; }
+.key-activities { grid-column: span 2; grid-row: 1; }
+.key-resources { grid-column: span 2; grid-row: 2; }
+.value-propositions { grid-column: span 2; grid-row: 1 / span 2; background-color: #fffcf9; }
+.customer-relationships { grid-column: span 2; grid-row: 1; }
+.channels { grid-column: span 2; grid-row: 2; }
+.customer-segments { grid-column: span 2; grid-row: 1 / span 2; }
+
+/* Fila Inferior: Mitad y Mitad (50% / 50%) */
+.cost-structure { 
+    grid-column: span 5; 
+    margin-top: 10px; 
+    border-top: 4px solid #c0392b; /* Rojo para costos */
+}
+
+.revenue-streams { 
+    grid-column: span 5; 
+    margin-top: 10px; 
+    border-top: 4px solid #27ae60; /* Verde para ingresos */
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .canvas-container {
+        display: flex;
+        flex-direction: column;
+    }
+}
